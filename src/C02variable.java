@@ -46,17 +46,63 @@ public class C02variable {
 //        double convertDouble = newBigDecimal.doubleValue();
 //        System.out.println(newBigDecimal.subtract(newBigDecimal2));
 
-        // 문자 char 2byte 할당 되어 한글 카바 가능
-        char my_char = '밥';
-        System.out.println(my_char);
+//        // 문자 char 2byte 할당 되어 한글 카바 가능
+//        char my_char = '밥';
+//        System.out.println(my_char);
+//
+//        //boolean true (1) or false (0)
+//        boolean my_bool = true;
+//        System.out.println(my_bool);
+//        if(my_bool){
+//            System.out.println("급네치킨입니다.");
+//        }
+//        int bool1 = 20;
+//        int bool2 = 10;
+//        if(bool1>bool2){
+//            System.out.println("bool1이 더 크다!");
+//        }else{
+//            System.out.println("bool1이 더 작다아!");
+//        }
 
-        //boolean true (1) or false (0)
-        boolean my_bool = true;
-        System.out.println(my_bool);
-        if(my_bool){
-            System.out.println("급네치킨입니다.");
-        }
-        int bool1 = 20;
-        int bool2 = 10;
+        // 묵시적 타입 변환
+        char my_char ='a';
+        int my_int = my_char;
+        System.out.println(my_int);
+        //int -> double
+        int my_int2 = 10;
+        double my_double = my_int2;
+        System.out.println(my_double);
+        // double -> int
+        //my_int2 = my_double 응 안돼! 에러 발생
+        my_int2 = (int)my_double; // 명시적 타입 변환은 가능.(소수부 손실 가능성이 있다)
+        double myDouble2 = 7.2f;
+        System.out.println(myDouble2);
+
+        //명시적 타입변환
+        char myChar2 ='b';
+        int myChar2Num = (int) myChar2;
+        // int a =1 b =4 둘을 나눈 값을 int에 담아 출력, double에 담아 출력
+        int a = 1;
+        int b = 4;
+        int c = a/b; // 0
+        double d = a/b; //0.0
+        System.out.println(1/4);
+        System.out.println((double) a/(double) b); // 0.25
+        System.out.println((double) a/ b); //0.25
+        double aDouble = a;
+        double bDouble = b;
+        System.out.println(aDouble/bDouble); //0.25
+
+        //선언과 동시에 초기화
+        int a2 = 10;
+        a2 = 20;
+        //선언 후 초기화
+        int a4; //값이 0으로 초기화 메모리 내부적으로 0으로 되어있습니다 + String은 null
+        // array 만들 때 int 형의 디폴트가 0 인 이유
+        a4 = 100;
+        // 상수는 값의 재할당이 불가능하다 final
+        final int AGE = 28;
+        // AGE = 29 상수는 변경이 불가능합니다
+        // 상수는 선언만 한 후 초기화하는 방식이 자바 8이전에서는 불가능 했지만 지금은 가능
     }
 }
