@@ -77,6 +77,7 @@ public class C02variable {
         my_int2 = (int)my_double; // 명시적 타입 변환은 가능.(소수부 손실 가능성이 있다)
         double myDouble2 = 7.2f;
         System.out.println(myDouble2);
+        System.out.println('A'>'B'); // 묵시적으로 알아 바꿔줍니다
 
         //명시적 타입변환
         char myChar2 ='b';
@@ -104,5 +105,6 @@ public class C02variable {
         final int AGE = 28;
         // AGE = 29 상수는 변경이 불가능합니다
         // 상수는 선언만 한 후 초기화하는 방식이 자바 8이전에서는 불가능 했지만 지금은 가능
+        boolean bool; // false로 메모리에 담김
     }
 }
