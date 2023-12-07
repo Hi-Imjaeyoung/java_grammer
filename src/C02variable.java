@@ -98,8 +98,10 @@ public class C02variable {
         int a2 = 10;
         a2 = 20;
         //선언 후 초기화
-        int a4; //값이 0으로 초기화 메모리 내부적으로 0으로 되어있습니다 + String은 null
-        // array 만들 때 int 형의 디폴트가 0 인 이유
+        int a4; //지역변수는 값이 0으로 초기화 x 객체로 선언될때는 0으로 초기화 + String은 null
+        //                                  array 만들 때 int 형의 디폴트가 0 인 이유
+        int[] arr = new int[5];
+        System.out.println(arr[1]);
         a4 = 100;
         // 상수는 값의 재할당이 불가능하다 final
         final int AGE = 28;
