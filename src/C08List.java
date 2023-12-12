@@ -149,7 +149,5 @@ public class C08List {
 //        4.int list를 int[]로 변환
         //4.1 for
         //4.2 stream API
-
-//        두개뽑아서 더하기 : 리스트로
     }
 }
