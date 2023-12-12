@@ -59,11 +59,12 @@ public class C09Map {
         myList.add("tennis");
         Map<String,Integer> my_map2 = new HashMap<>();
         for(String nameOfSport : myList){
-            if(my_map2.containsKey(nameOfSport)){
-                my_map2.put(nameOfSport,my_map2.get(nameOfSport)+1);
-            }else{
-                my_map2.put(nameOfSport,1);
-            }
+//            if(my_map2.containsKey(nameOfSport)){
+//                my_map2.put(nameOfSport,my_map2.get(nameOfSport)+1);
+//            }else{
+//                my_map2.put(nameOfSport,1);
+//            }
+            my_map2.put(nameOfSport, my_map2.getOrDefault(nameOfSport,0)+1);
         }
        Iterator<String> it = my_map2.keySet().iterator();
         while(it.hasNext()){
