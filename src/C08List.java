@@ -149,5 +149,6 @@ public class C08List {
 //        4.int list를 int[]로 변환
         //4.1 for
         //4.2 stream API
+        int [] int_arr = int_list1.stream().mapToInt(Integer::intValue).toArray();
     }
 }
