@@ -1,7 +1,5 @@
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
-import java.util.Stack;
+import java.sql.SQLOutput;
+import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
 
 public class C11StackQueue {
@@ -106,7 +104,11 @@ public class C11StackQueue {
 //        arrayBlockingQue.add("Node");
 //        arrayBlockingQue.add("kotlin"); // error 던짐
 
-
-
+        Queue<Integer> pq = new PriorityQueue<>();
+        pq.add(30);
+        pq.add(20);
+        pq.add(5);
+        pq.add(10);
+        System.out.println(pq);
     }
 }
