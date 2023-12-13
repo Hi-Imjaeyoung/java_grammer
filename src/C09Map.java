@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.stream.Stream;
 
 public class C09Map {
     public static void main(String[] args) {
@@ -71,6 +70,26 @@ public class C09Map {
             String nowSport = it.next();
             System.out.println("종목 : "+nowSport+" 좋아하는 사람 수 : "+my_map2.getOrDefault(nowSport,0));
         }
+
+//        LinkedHashMap : 데이터 삽입 순서 유지
+        Map<String,Integer> linkedMap = new LinkedHashMap<>();
+        linkedMap.put("Hello2",1);
+        linkedMap.put("Hello1",1);
+        linkedMap.put("Hello3",1);
+        linkedMap.put("Hello4",1);
+        linkedMap.put("Hello5",1);
+        System.out.println("LinkedMap");
+        System.out.println(linkedMap);
+
+//        TreeMap : 데이터의 정렬
+        Map<String,Integer> treeMap = new TreeMap<>();
+        treeMap.put("Hello2",1);
+        treeMap.put("Hello1",1);
+        treeMap.put("Hello3",1);
+        treeMap.put("Hello4",1);
+        treeMap.put("Hello5",1);
+        System.out.println("TreeMap");
+        System.out.println(treeMap);
 
     }
 }
