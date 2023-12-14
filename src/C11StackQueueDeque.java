@@ -1,8 +1,7 @@
-import java.sql.SQLOutput;
 import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
 
-public class C11StackQueue {
+public class C11StackQueueDeque {
     public static void main(String[] args) {
         Stack<Integer> myStack = new Stack<>();
         myStack.push(10);
@@ -110,5 +109,19 @@ public class C11StackQueue {
         pq.add(5);
         pq.add(10);
         System.out.println(pq);
+
+//        ArrayDeque는 양방향에서 데이터를 삽입 제거 할 수 있다. 성능 굿 왜 빠름?
+        // 양 방향 큐
+        Deque<Integer> mydq = new ArrayDeque<>();
+        mydq.addFirst(10);
+        mydq.addFirst(20);
+        mydq.addFirst(30);
+        System.out.println(mydq);
+        mydq.addLast(40);
+        System.out.println(mydq);
+        System.out.println(mydq.pollFirst());
+        System.out.println(mydq.pollLast());
+
+
     }
 }
