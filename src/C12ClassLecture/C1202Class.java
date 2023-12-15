@@ -52,7 +52,7 @@ class Mycalculator{
         return total;
     }
 }
-
+// 내부 클래스
 class MycalculatorInstance{
 
     // 객체를 만들지 않아도 접근이 가능

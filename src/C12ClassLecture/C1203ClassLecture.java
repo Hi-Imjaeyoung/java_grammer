@@ -33,7 +33,7 @@ public class C1203ClassLecture {
 //객체 생성후 whoIs 메서드 호출
 class Person{
     //private은 같은 클래스 내에서 접근이 가능게 함.
-    private String name , email;
+    private String name="" , email;
     private int passwd, age;
     public  void whoIs(){
         System.out.println("이름 :" +this.name +" email : "+this.email +" passwd : "+ this.passwd +" age : "+this.age);

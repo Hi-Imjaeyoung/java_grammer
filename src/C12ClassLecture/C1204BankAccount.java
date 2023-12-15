@@ -27,6 +27,11 @@ class Account{
     Account(){
         balance = new BigDecimal(0.000);
     }
+    // method Overloading
+    Account(String accountNumber){
+        this.accountNumber = accountNumber;
+        balance = new BigDecimal(0.000);
+    }
     public void setAccountNumber(String accountNumber){
         this.accountNumber = accountNumber;
     }
