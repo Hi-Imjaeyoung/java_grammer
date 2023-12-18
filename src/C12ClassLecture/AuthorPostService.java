@@ -175,7 +175,7 @@ class Post{
     Post(Author author,String title,String contents){
         staticId++;
         id = staticId;
-        //주소 들어가는거니까 순서는 상관 없음 아이디어가 기가막힌다.진짜루.
+        //주소 들어가는거니까 순서는 상관 없음 아이디어가 기가막힌다.
         this.author = author;
         this.author.addPost(this);
         this.author = author;
