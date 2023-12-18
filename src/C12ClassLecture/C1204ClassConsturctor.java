@@ -1,6 +1,7 @@
 package C12ClassLecture;
 
 import java.time.*;
+import java.util.Scanner;
 import java.util.StringTokenizer;
 // 요구사항 내부클래스 calender
 // 변수 year month day -> String
@@ -15,6 +16,10 @@ public class C1204ClassConsturctor {
         Calender calender1 = new Calender();
         Calender calender2 = new Calender("1592","1","1");
         Calender calender3 = new Calender("2002","4");
+        Scanner sc = new Scanner(System.in);
+        while(true){
+            System.out.println(sc.nextInt());
+        }
 
     }
 }
