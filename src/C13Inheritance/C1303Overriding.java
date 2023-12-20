@@ -35,7 +35,7 @@ class Animal{
         System.out.println("다리는 4개지요");
     }
 }
-class Dog extends Animal{
+class Dog extends Animal implements Comparable<Dog>{
     @Override
     void sound(){
         System.out.println("멍멍이");
@@ -45,6 +45,10 @@ class Dog extends Animal{
     }
     void sound2(){
         System.out.println("멍멍이22");
+    }
+    @Override
+    public int compareTo(Dog o){
+        return 0;
     }
 }
 class Cat extends Animal{
