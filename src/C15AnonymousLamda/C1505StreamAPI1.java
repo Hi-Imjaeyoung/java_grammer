@@ -201,5 +201,12 @@ public class C1505StreamAPI1 {
         System.out.println(optionalInt.orElseThrow(()->new NoSuchElementException()));
 
         //과제 Stream API가 디버깅이 어렵다. peek() 이라는 메서드가 존재하긴 하는데
+        myList = Arrays.asList("java","python","c++","node","javascript");
+        myList.stream()
+              .filter(a->a.length()>3)
+              .peek(now -> System.out.println("길이가 4이상인 값 :" + now))
+              .map(a->a.toUpperCase())
+              .peek(now-> System.out.println("대문자로 :"+ now))
+              .forEach(System.out ::println);
     }
 }
