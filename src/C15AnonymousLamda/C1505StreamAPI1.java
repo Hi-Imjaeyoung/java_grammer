@@ -29,7 +29,7 @@ public class C1505StreamAPI1 {
         // 참조변수의 스트림 변환의 경우 제네릭의 타입소거 문제 발생
         // 제네릭의 타입소거란 java버전의 호환성을 위해 제네릭 타입을 런타입시점에 제거하는 것을 의미
         String[] starr2 = strStream.filter(a->a.length()<=4).toArray(a->new String[a]);
-        // 메서드 참조 방식으로 표현하는 것이 더 일반적이다.
+        // 메서드 참조 방식으로 표현하는 것이 더 일반적이다. 하나의 메서드만 호출하는 경우에 매개변수를 제거한 방식
         // 클래스 :: 메서드 (메서드 참조 방식) new가 메서드
         //String[] starr3 = strStream.filter(a->a.length()<=4).toArray(String[] :: new);
         System.out.println(Arrays.toString(starr2));
