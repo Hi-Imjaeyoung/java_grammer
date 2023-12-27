@@ -43,6 +43,7 @@ public class AuthorController {
                         }
                     }
                 }
+                // TODO Optional이
                 if(loginedAuthor.isPresent()){
                     System.out.println(loginedAuthor.get().getName()+"님 환영합니다!!");
                 }

@@ -1,6 +1,7 @@
 package C17ExceptionFileParseing.AuthorException;
 
 import java.util.*;
+import java.util.function.ToDoubleBiFunction;
 
 class AuthorService {
     AuthorRepo authorRepo;
@@ -29,32 +30,44 @@ class AuthorService {
     }
 
     Optional<Author> logIn(String email, String passWd) throws IllegalArgumentException, NoSuchElementException{
-        List<Author> authorList = authorRepo.getAuthors(); // -> 하나의 author 객체만 return 하는 메서드로
-        Optional<Author> author1 = Optional.empty();
-        for(Author author : authorList){
-            if(author.getEmail().equals(email)){
-                if(author.getPasswd().equals(passWd)){
-                    author1 = Optional.ofNullable(author);
-                }else{
-                    // passWd가 틀리면 예외 발생(illegalArgument)
-                    throw new IllegalArgumentException("비밀번호가 틀립니다");
-                }
-            }
-        }
+        // 코드의 중복이 발생. 리팩토링 필요
+//        List<Author> authorList = authorRepo.getAuthors(); // -> 하나의 author 객체만 return 하는 메서드로
+//        Optional<Author> author1 = Optional.empty();
+//        for(Author author : authorList){
+//            if(author.getEmail().equals(email)){
+//                if(author.getPasswd().equals(passWd)){
+//                    author1 = Optional.ofNullable(author);
+//                }else{
+//                    // passWd가 틀리면 예외 발생(illegalArgument)
+//                    throw new IllegalArgumentException("비밀번호가 틀립니다");
+//                }
+//            }
+//        }
+        Optional<Author> author1 = authorRepo.getAuthorByEmail(email);
         // 이메일이 존재하지 않으면 예외 발생(NosuchElement)
+        //TODO:확실하게 있으면 꺼내서 던지기!
+
+        // 이 방법에서는 Optional 객체를 쓸 이유가 없다.
         if(!author1.isPresent()){
             throw new NoSuchElementException("해당 이메일은 존재하지 않습니다");
+        }
+        if(!author1.get().getPasswd().equals(passWd)){
+            throw new IllegalArgumentException("비밀번호가 틀립니다");
         }
         return author1;
     }
     void DuplicationCheck(String name, String email) throws IllegalArgumentException{
-        for(Author author : authorRepo.getAuthors()){
-            if(author.getEmail().equals(email)){
-                throw new IllegalArgumentException("이미 가입된 이메일입니다");
-            }
-            if (author.getName().equals(name)){
-                throw new IllegalArgumentException("이미 가입된 이름입니다");
-            }
+//        for(Author author : authorRepo.getAuthors()){
+//            if(author.getEmail().equals(email)){
+//                throw new IllegalArgumentException("이미 가입된 이메일입니다");
+//            }
+//            if (author.getName().equals(name)){
+//                throw new IllegalArgumentException("이미 가입된 이름입니다");
+//            }
+//        }
+        Optional<Author> author = authorRepo.getAuthorByEmail(email);
+        if(author.isPresent()){
+            throw new IllegalArgumentException("이미 가입된 이메일입니다");
         }
     }
     Optional<Author> findPassWd(String name){
