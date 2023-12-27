@@ -5,36 +5,36 @@ import java.util.Scanner;
 
 public class C1701Exception {
     public static void main(String[] args) {
-//        //ArithmeticException : 0을 나눌 떄
-//        System.out.println("나눗셈 프로그램입니다. 숫자10에 나눌 분모값을 입력해주세요");
-//        int num = 10;
-//        Scanner sc = new Scanner(System.in);
-//        // 예외가 발생할것으로 예상되는 코드에 try catch를 감싸준다
-//        try {
-//            int input = sc.nextInt();
-//            System.out.println("10에"+input+"을 나누면");
-//            System.out.println(num/input+" 입니다");
-//        // catch에는 try구문 안에서 발생 가능한 예외상황을 적어야 catch가 된다.
-//        }catch (InputMismatchException e){
-//            // 어쩌구 저쩌구
-//            System.out.println("삒!!!! 입력값이 비정상입니다");
-//            e.printStackTrace();
-//        } catch (ArithmeticException e){
-//            System.out.println("ㅃ뺶ㄲㄲㄲ!!!!! 0 으로 못 나눕니다");
-//            // 예외 관련된 정보들이 들어있음
-//            // 방법 1
-//            System.out.println(e.getMessage());
-//            // 방법 2
-//            e.printStackTrace();
-//            // 로그 파일에 정제된 형태로 남겨야함 (스프링 에서)
-//        }catch (Exception e){
-//            //  모든 예외의 조상을 마지막에 모든 예외를 다 잡는다
-//            System.out.println("삑!!!!!!알 수 없는 예외가 발생했습니다");
-//            e.printStackTrace();
-//        }finally {
-//            // 반드시 실행되어야 하는 구문 삽입
-//        }
-//        System.out.println("감사합니다");
+        //ArithmeticException : 0을 나눌 떄
+        System.out.println("나눗셈 프로그램입니다. 숫자10에 나눌 분모값을 입력해주세요");
+        int num = 10;
+        Scanner sc = new Scanner(System.in);
+        // 예외가 발생할것으로 예상되는 코드에 try catch를 감싸준다
+        try {
+            int input = sc.nextInt();
+            System.out.println("10에"+input+"을 나누면");
+            System.out.println(num/input+" 입니다");
+        // catch에는 try구문 안에서 발생 가능한 예외상황을 적어야 catch가 된다.
+        }catch (InputMismatchException e){
+            // 어쩌구 저쩌구
+            System.out.println("삒!!!! 입력값이 비정상입니다");
+            e.printStackTrace();
+        } catch (ArithmeticException e){
+            System.out.println("ㅃ뺶ㄲㄲㄲ!!!!! 0 으로 못 나눕니다");
+            // 예외 관련된 정보들이 들어있음
+            // 방법 1
+            System.out.println(e.getMessage());
+            // 방법 2
+            e.printStackTrace();
+            // 로그 파일에 정제된 형태로 남겨야함 (스프링 에서)
+        }catch (Exception e){
+            //  모든 예외의 조상을 마지막에 모든 예외를 다 잡는다
+            System.out.println("삑!!!!!!알 수 없는 예외가 발생했습니다");
+            e.printStackTrace();
+        }finally {
+            // 반드시 실행되어야 하는 구문 삽입
+        }
+        System.out.println("감사합니다");
 
         //throw와 throws 예제
         String passWd = "1234";
